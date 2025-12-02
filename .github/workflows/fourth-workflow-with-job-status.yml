@@ -40,4 +40,4 @@ jobs:
 
       - name: Always run this step on second job notifaction
         if: always()
-        run: echo "Second Job result status is: ${{needs.second-fail-job.result}}"
+        run: echo "Second Job result status is ${{needs.second-fail-job.result}}"
