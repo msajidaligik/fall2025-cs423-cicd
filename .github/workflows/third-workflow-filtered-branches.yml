@@ -26,5 +26,10 @@ jobs:
       - name: Print the contents of ta firstfile
         run: cat firstfile.txt
       - name: Run if job fails
-        if: failure()
-        run: echo "You may send these details of the failure to the dev or other team members"
+        if: always()
+        run: |
+          if [ ${{ job.status }} != 'success' ]; then
+                    echo "You may send these details of the failure to the dev or other team members"
+          else
+                    echo "Job is successfull"
+          fi
