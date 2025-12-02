@@ -31,11 +31,11 @@ jobs:
     needs: second-fail-job
     steps:
       - name: Send notification about the second job on failure
-        if: ${{ needs.second-fail-job.result == "failure" }}
+        if: ${{ needs.second-fail-job.result == 'failure' }}
         run: echo "Job failed - Sending notification to the dev or other team members"
 
       - name: Send notification about the second job on success
-        if: ${{ needs.second-fail-job.result == "success" }}
+        if: ${{ needs.second-fail-job.result == 'success' }}
         run: echo "Job succeeded - Sending notification to the dev or other team members"
 
       - name: Always run this step on second job notifaction
