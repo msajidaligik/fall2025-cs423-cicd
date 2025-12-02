@@ -1,6 +1,6 @@
 name: Third Workflow Using GitHub Actions
 
-run-name: >+ 
+run-name: >+ Third workflow
           ${{ github.actor  }} has triggered this workflow \
           using ${{ github.event_name }} event \
           on branch ${{ github.ref  }} of ${{github.repository}} repo.
@@ -23,13 +23,3 @@ jobs:
     steps:
       - name: Echo any text using echo bash command
         run: echo "Hi class, hope you all had a good mid semester break"
-      - name: Print the contents of ta firstfile
-        run: cat firstfile.txt
-      - name: Run if job fails
-        if: always()
-        run: |
-          if [ ${{ job.status }} != 'success' ]; then
-                    echo "You may send these details of the failure to the dev or other team members"
-          else
-                    echo "Job is successfull"
-          fi
