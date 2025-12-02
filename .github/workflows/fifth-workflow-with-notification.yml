@@ -45,7 +45,6 @@ jobs:
         with:
           server_address: ${{secrets.SMTP_HOST}}
           server_port: 465
-          secure: true
           username: ${{secrets.SMTP_USERNAME}}
           password: ${{secrets.SMTP_PASSWORD}}
           subject: Github Actions job result
