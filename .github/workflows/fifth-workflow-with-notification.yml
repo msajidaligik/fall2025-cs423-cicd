@@ -51,4 +51,6 @@ jobs:
           subject: Github Actions job result
           to: ${{vars.MAIL_TO_LIST}}
           from: sajidali - GitHub Action
-          body: Build job of ${{github.repository}} completed with result status of ${{needs.second-fail-job.result}}
+          body: >+
+            Build job of ${{github.repository}} completed with result status of ${{needs.second-fail-job.result}}
+            "Find more details on: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
