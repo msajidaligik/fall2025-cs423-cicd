@@ -1,0 +1,2 @@
+new text for second file
+second line for the second file
