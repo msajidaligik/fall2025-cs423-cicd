@@ -2,8 +2,8 @@ name: Sixth Workflow Using GitHub Actions
 
 run-name: >+ 
           Sixth workflow 
-          ${{ github.actor  }} has triggered this workflow \
-          using ${{ github.event_name }} event \
+          ${{ github.actor  }} has triggered this workflow 
+          using ${{ github.event_name }} event 
           on branch ${{ github.ref  }} of ${{github.repository}} repo.
 on:
   pull_request:
@@ -38,4 +38,6 @@ jobs:
           subject: Github Actions job result
           to: ${{vars.MAIL_TO_LIST}}
           from: sajidali - GitHub Action
-          body: Build job of ${{github.repository}} completed with result status of ${{needs.first-job.result}}
+          body: >+ 
+            Build job of ${{github.repository}} completed with result status of ${{needs.first-job.result}}
+            "Find more details on: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
